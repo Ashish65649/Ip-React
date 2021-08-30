@@ -18,7 +18,7 @@ function App() {
 
   const submitForm = (event) => {
     event.preventDefault();
-    fetch("http://localhost:8500/info?ip=" + ip)
+    fetch("https://ip-spring.herokuapp.com/info?ip=" + ip)
       .then((response) => response.json())
       .then((data) => {
         setShow(true);
@@ -46,7 +46,7 @@ function App() {
           value={ip}
           required
           onChange={(event) => setIp(event.target.value)}
-          placeholder="Enter IP address : "
+          placeholder="103.75.166.207"
         />
         <button type="submit">Check</button>
       </form>
