@@ -54,66 +54,30 @@ function App() {
         <button type="submit">Check</button>
       </form>
 
-      <div style={{ display: "flex", marginTop: "2rem" }}>
-        <div
-          style={{
-            width: "40%",
-            height: "75vh",
-            borderRight: "2px solid black",
-          }}
-        >
-          {show && (
-            <div>
-              <p> City : {info.city} </p>
-              <p> State : {info.state}</p>
-              <p> Country : {info.country}</p>
-              <p> Currency : {info.currency}</p>
-              <p> Continent : {info.continent} </p>
-              <p> Latitude : {info.lati}</p>
-              <p> Longitude : {info.long}</p>
-              <p> Current Time : {info.time}</p>
-              <p> Time Offset : {info.offset} </p>
-              <div
-                style={{
-                  margin: "8px 0",
-                  display: "flex",
-                  alignItem: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <p>National Flag :&nbsp;</p>
-                <img src={info.flag} alt="img" />
-              </div>
-            </div>
-          )}
+      {show && (
+        <div>
+          <p> City : {info.city} </p>
+          <p> State : {info.state}</p>
+          <p> Country : {info.country}</p>
+          <p> Currency : {info.currency}</p>
+          <p> Continent : {info.continent} </p>
+          <p> Latitude : {info.lati}</p>
+          <p> Longitude : {info.long}</p>
+          <p> Current Time : {info.time}</p>
+          <p> Time Offset : {info.offset} </p>
+          <div
+            style={{
+              margin: "8px 0",
+              display: "flex",
+              alignItem: "center",
+              justifyContent: "center",
+            }}
+          >
+            <p>National Flag :&nbsp;</p>
+            <img src={info.flag} alt="img" />
+          </div>
         </div>
-        <div style={{ width: "60%" }}>
-          {show && (
-            <div>
-              <p> City : {info.city} </p>
-              <p> State : {info.state}</p>
-              <p> Country : {info.country}</p>
-              <p> Currency : {info.currency}</p>
-              <p> Continent : {info.continent} </p>
-              <p> Latitude : {info.lati}</p>
-              <p> Longitude : {info.long}</p>
-              <p> Current Time : {info.time}</p>
-              <p> Time Offset : {info.offset} </p>
-              <div
-                style={{
-                  margin: "8px 0",
-                  display: "flex",
-                  alignItem: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <p>National Flag :&nbsp;</p>
-                <img src={info.flag} alt="img" />
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+      )}
     </div>
   );
 }
