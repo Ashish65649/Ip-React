@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap");
+
+.App {
+  text-align: center;
+}
+
+input {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "Glory", sans-serif;
+  width: 14rem;
+}
+
+button {
+  background-color: #6cccec;
+  border: none;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Glory", sans-serif;
+  font-size: 1.1rem;
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-family: "Glory", sans-serif;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #25b0df;
+}
