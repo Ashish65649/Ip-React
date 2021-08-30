@@ -8,6 +8,7 @@ function App() {
     city: "",
     state: "",
     country: "",
+    currency: "",
     continent: "",
     lati: "",
     long: "",
@@ -21,16 +22,18 @@ function App() {
     fetch("https://ip-spring.herokuapp.com/info?ip=" + ip)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setShow(true);
         let obj = new Date(data.time_zone.current_time).toLocaleTimeString();
         setInfo({
           city: data.city + ` ( ${data.zipcode} ) `,
           state: data.state_prov,
           country: data.country_name,
+          currency: data.currency.code + ` ( ${data.currency.symbol} )`,
           lati: data.latitude,
           long: data.longitude,
           time: obj,
-          offset: data.time_zone.offset,
+          offset: "GMT + ( " + data.time_zone.offset + " )",
           flag: data.country_flag,
           continent: data.continent_name,
         });
@@ -51,29 +54,66 @@ function App() {
         <button type="submit">Check</button>
       </form>
 
-      {show && (
-        <div>
-          <p> City : {info.city} </p>
-          <p> State : {info.state}</p>
-          <p> Country : {info.country}</p>
-          <p> Continent : {info.continent} </p>
-          <p> Latitude : {info.lati}</p>
-          <p> Longitude : {info.long}</p>
-          <p> Current Time : {info.time}</p>
-          <p> Time Offset : {info.offset} </p>
-          <div
-            style={{
-              margin: "8px 0",
-              display: "flex",
-              alignItem: "center",
-              justifyContent: "center",
-            }}
-          >
-            <p>National Flag :&nbsp;</p>
-            <img src={info.flag} alt="img" />
-          </div>
+      <div style={{ display: "flex", marginTop: "2rem" }}>
+        <div
+          style={{
+            width: "40%",
+            height: "75vh",
+            borderRight: "2px solid black",
+          }}
+        >
+          {show && (
+            <div>
+              <p> City : {info.city} </p>
+              <p> State : {info.state}</p>
+              <p> Country : {info.country}</p>
+              <p> Currency : {info.currency}</p>
+              <p> Continent : {info.continent} </p>
+              <p> Latitude : {info.lati}</p>
+              <p> Longitude : {info.long}</p>
+              <p> Current Time : {info.time}</p>
+              <p> Time Offset : {info.offset} </p>
+              <div
+                style={{
+                  margin: "8px 0",
+                  display: "flex",
+                  alignItem: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p>National Flag :&nbsp;</p>
+                <img src={info.flag} alt="img" />
+              </div>
+            </div>
+          )}
         </div>
-      )}
+        <div style={{ width: "60%" }}>
+          {show && (
+            <div>
+              <p> City : {info.city} </p>
+              <p> State : {info.state}</p>
+              <p> Country : {info.country}</p>
+              <p> Currency : {info.currency}</p>
+              <p> Continent : {info.continent} </p>
+              <p> Latitude : {info.lati}</p>
+              <p> Longitude : {info.long}</p>
+              <p> Current Time : {info.time}</p>
+              <p> Time Offset : {info.offset} </p>
+              <div
+                style={{
+                  margin: "8px 0",
+                  display: "flex",
+                  alignItem: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p>National Flag :&nbsp;</p>
+                <img src={info.flag} alt="img" />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
