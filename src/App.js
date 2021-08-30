@@ -69,7 +69,7 @@ function App() {
               justifyContent: "center",
             }}
           >
-            <p>National Flag : </p>
+            <p>National Flag :&nbsp;</p>
             <img src={info.flag} alt="img" />
           </div>
         </div>
