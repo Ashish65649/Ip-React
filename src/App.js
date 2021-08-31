@@ -23,7 +23,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setShow(true);
-        let obj = new Date(data.time_zone.current_time).toLocaleTimeString();
         setInfo({
           city: data.city + ` ( ${data.zipcode} ) `,
           state: data.state_prov,
@@ -31,7 +30,7 @@ function App() {
           currency: data.currency.code + ` ( ${data.currency.symbol} )`,
           lati: data.latitude,
           long: data.longitude,
-          time: obj,
+          time: data.time_zone.current_time,
           offset: "GMT + ( " + data.time_zone.offset + " )",
           flag: data.country_flag,
           continent: data.continent_name,
