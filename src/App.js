@@ -22,7 +22,6 @@ function App() {
     fetch("https://ip-spring.herokuapp.com/info?ip=" + ip)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setShow(true);
         let obj = new Date(data.time_zone.current_time).toLocaleTimeString();
         setInfo({
